@@ -1,12 +1,13 @@
 pipeline {
     agent any
-    tools {
-        sbt 'sbt-1.11.2'
+    environment {
+
     }
     stages {
         stage('Compile') {
             steps {
-                echo "${tool 'sbt-1.11.2'}"
+                echo "${env.PATH}"
+                echo "${env.SBT_HOME}"
                 sh 'sbt clean compile'
             }
         }
