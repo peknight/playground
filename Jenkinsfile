@@ -11,6 +11,7 @@ pipeline {
         }
         stage('Test') {
             steps {
+                sh "ls ${env.NODE_HOME}/bin"
                 sh "${env.NODE_HOME}/bin/node -v"
                 sh 'sbt test'
             }
