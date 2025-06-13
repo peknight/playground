@@ -6,10 +6,7 @@ pipeline {
     stages {
         stage('Compile') {
             steps {
-                sh '''
-                sbt clean compile
-                echo "编译完成"
-                '''
+                sh 'sbt clean compile'
             }
         }
     }
