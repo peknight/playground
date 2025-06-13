@@ -11,8 +11,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                echo "${env.NODE_HOME}"
-                echo "${env.PATH}"
+                sh 'node -v'
                 sh 'npm install'
                 sh 'sbt test'
             }
