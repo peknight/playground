@@ -1,7 +1,7 @@
 pipeline {
     agent any
     tools {
-        sbt 'Default'
+        sbt 'sbt-1.11.2'
     }
     stages {
         stage('Compile') {
