@@ -9,5 +9,15 @@ pipeline {
                 sh 'sbt clean compile'
             }
         }
+        stage('Test') {
+            steps {
+                sh 'sbt test'
+            }
+        }
+        stage('Package') {
+            steps {
+                sh 'sbt package'
+            }
+        }
     }
 }
