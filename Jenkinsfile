@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        PATH="${env.SBT_HOME}/bin:${env.PATH}"
+        PATH="${env.SBT_HOME}/bin:${env.NODE_HOME}/bin:${env.PATH}"
     }
     stages {
         stage('Compile') {
