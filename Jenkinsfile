@@ -6,6 +6,7 @@ pipeline {
     stages {
         stage('Compile') {
             steps {
+                echo ${tool 'sbt-1.11.2'}
                 sh 'sbt clean compile'
             }
         }
