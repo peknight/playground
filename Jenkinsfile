@@ -2,9 +2,9 @@ pipeline {
     agent any
 
     stages {
-        stage('Checkout') {
+        stage('Compile') {
             steps {
-                checkout scm
+                sh 'sbt clean compile'
             }
         }
     }
