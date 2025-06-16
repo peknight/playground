@@ -22,7 +22,7 @@ pipeline {
         stage('Publish') {
             steps {
                 sh """
-                    sbt "set credentials += Credentials("Sonatype Nexus Repository Manager", "nexus.local.peknight.com", "${NEXUS_USR}", "${NEXUS_PASSWORD}")" publish
+                    sbt "set credentials += Credentials("Sonatype Nexus Repository Manager", "nexus.local.peknight.com", "${env.NEXUS_USR}", "${env.NEXUS_PASSWORD}")" publish
                 """
             }
         }
