@@ -39,8 +39,15 @@ lazy val playground = (project in file("."))
 
 lazy val playgroundCore = (crossProject(JSPlatform, JVMPlatform) in file("playground-core"))
   .settings(commonSettings)
+  .enablePlugins(JavaAppPackaging)
   .settings(
     name := "playground-core",
+    dockerBaseImage := "eclipse-temurin:21",
+    Docker / packageName := "pek/playground-app",
+    Docker / maintainer := "peknight <JKpeknight@gmail.com>",
+    dockerBuildOptions ++= Seq(
+      "--platform", "linux/amd64"
+    ),
     libraryDependencies ++= Seq(
     )
   )
