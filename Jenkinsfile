@@ -14,15 +14,10 @@ pipeline {
                 sh 'sbt test'
             }
         }
-        stage('Package') {
-            steps {
-                sh 'sbt package'
-            }
-        }
         stage('Publish') {
             steps {
                 sh """
-                    sbt "set credentials += Credentials(\\"Sonatype Nexus Repository Manager\\", \\"nexus.local.peknight.com\\", \\"${env.NEXUS_USER}\\", \\"${env.NEXUS_PASSWORD}\\")" publish
+                    sbt publish
                 """
             }
         }
