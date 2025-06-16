@@ -7,7 +7,7 @@ ThisBuild / organization := "com.peknight"
 ThisBuild / versionScheme := Some("early-semver")
 
 ThisBuild / publishTo := {
-  val nexus = "https://nexus.peknight.com:8443/repository"
+  val nexus = "https://nexus.local.peknight.com:8443/repository"
   if (isSnapshot.value)
     Some("snapshot" at s"$nexus/maven-snapshots/")
   else
