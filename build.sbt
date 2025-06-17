@@ -45,6 +45,7 @@ lazy val playgroundCore = (crossProject(JSPlatform, JVMPlatform) in file("playgr
     dockerBaseImage := "eclipse-temurin:21",
     Docker / packageName := "pek/playground-app",
     Docker / maintainer := "peknight <JKpeknight@gmail.com>",
+    dockerRepository := Some("docker.peknight.com"),
     dockerBuildOptions ++= Seq(
       "--platform", "linux/amd64"
     ),
