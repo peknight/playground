@@ -13,16 +13,17 @@ pipeline {
         }
         stage('Publish Local') {
             steps {
-                sh """
-                    sbt publishLocal
-                """
+                sh 'sbt publishLocal'
             }
         }
         stage('Publish') {
             steps {
-                sh """
-                    sbt publish
-                """
+                sh 'sbt publish'
+            }
+        }
+        state('Docker Publish Local') {
+            steps {
+                sh "sbt 'project playgroundCoreJVM' Docker/publishLocal"
             }
         }
     }
