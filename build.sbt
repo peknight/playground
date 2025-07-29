@@ -14,7 +14,9 @@ ThisBuild / publishTo := {
     Some("releases" at s"$nexus/maven-releases/")
 }
 
-ThisBuild / credentials += Credentials(Path.userHome / ".sbt" / ".credentials")
+ThisBuild / credentials ++= Seq(
+  Credentials(Path.userHome / ".sbt" / ".credentials")
+)
 
 lazy val commonSettings = Seq(
   scalacOptions ++= Seq(
