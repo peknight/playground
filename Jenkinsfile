@@ -26,5 +26,10 @@ pipeline {
                 sh "sbt 'project playgroundCoreJVM' Docker/publishLocal"
             }
         }
+        stage('Docker Publish') {
+            steps {
+                sh "sbt 'project playgroundCoreJVM' Docker/publish"
+            }
+        }
     }
 }
