@@ -13,7 +13,7 @@ lazy val playground = (project in file("."))
 lazy val playgroundCore = (crossProject(JVMPlatform, JSPlatform, NativePlatform) in file("playground-core"))
   .enablePlugins(JavaAppPackaging)
   .settings(name := "playground-core")
-  .settings(com.peknight.build.sbt.dockerSettings)
+  .settings(dockerSettings)
   .settings(
     Docker / packageName := "pek/playground-app",
   )
