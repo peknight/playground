@@ -8,6 +8,7 @@ lazy val playground = (project in file("."))
   .aggregate(
     playgroundCore.jvm,
     playgroundCore.js,
+    playgroundCore.native,
   )
 
 lazy val playgroundCore = (crossProject(JVMPlatform, JSPlatform, NativePlatform) in file("playground-core"))
@@ -15,5 +16,5 @@ lazy val playgroundCore = (crossProject(JVMPlatform, JSPlatform, NativePlatform)
   .settings(name := "playground-core")
   .settings(dockerSettings)
   .settings(
-    Docker / packageName := "pek/playground-app",
+    Docker / packageName := "peknight/playground-app",
   )
