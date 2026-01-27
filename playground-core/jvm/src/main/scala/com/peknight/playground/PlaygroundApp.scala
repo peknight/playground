@@ -1,5 +1,5 @@
 package com.peknight.playground
 
-object PlaygroundApp extends App:
-  println("Hello, world!")
+object PlaygroundApp:
+  @main def hello(): Unit = println("Hello, world!")
 end PlaygroundApp
