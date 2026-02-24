@@ -15,5 +15,5 @@ lazy val playgroundApp = (crossProject(JVMPlatform, JSPlatform) in file("playgro
   .settings(name := "playground-app")
   .settings(dockerSettings)
   .settings(
-    Docker / packageName := "docker.peknight.com/peknight/playground-app",
+    Docker / packageName := "peknight/playground-app",
   )
