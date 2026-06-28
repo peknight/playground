@@ -5,15 +5,14 @@ commonSettings
 
 lazy val playground = (project in file("."))
   .settings(name := "playground")
-  .aggregate(
-    playgroundApp.jvm,
-    playgroundApp.js,
-  )
+  .aggregate(playgroundApp.projectRefs *)
 
-lazy val playgroundApp = (crossProject(JVMPlatform, JSPlatform) in file("playground-app"))
+lazy val playgroundApp = (projectMatrix in file("playground-app"))
   .enablePlugins(JavaAppPackaging)
   .settings(name := "playground-app")
   .settings(dockerSettings)
   .settings(
     Docker / packageName := "peknight/playground-app",
   )
+  .jvmPlatform(scalaVersions = Seq(scala.scala3.version))
+  .jsPlatform(scalaVersions = Seq(scala.scala3.version))
